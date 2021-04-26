@@ -21,4 +21,18 @@ public class StackTest {
         myStack.printStack();
         Assertions.assertEquals(myThirdNode, peak);
     }
+
+    @Test
+    public void givenElements_WhenPopShouldMatchLastNode() {
+        Stack myStack = new Stack();
+        MyNode<Integer> myFirstNode= new MyNode<>(70);
+        MyNode<Integer> mySecondNode= new MyNode<>(30);
+        MyNode<Integer> myThirdNode= new MyNode<>(56);
+        myStack.push(myFirstNode);
+        myStack.push(mySecondNode);
+        myStack.push(myThirdNode);
+        INode pop = myStack.pop();
+        myStack.printStack();
+        Assertions.assertEquals(myThirdNode, pop);
+    }
 }
